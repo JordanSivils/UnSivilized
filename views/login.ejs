@@ -1,0 +1,59 @@
+<%- include('partials/publicHeader') %>
+<%- include('partials/publicNav') %>
+<link rel="stylesheet" href="/styles/user.css">
+<%- include('partials/head-body') %>
+    
+    
+<div class="container mt-5">
+    <h1 class="text-center mb-3">Login is only for Admins of this Website.</h1>
+    <h4 class="text-center mb-5">User logins coming soon, thank you!</h4>
+    <form action="/login" class="p-5 m-5" id="login-form">
+    <div class="row justify-content-center" >  
+                <label for="userName" class="col-sm-2 col-form-label">User Name</label>
+                <div class="col-4">
+                    <input type="text"  name="userName" id="userName">
+                </div>
+            </div>
+            <div class="form-group row justify-content-center">
+                <label for="password" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-4">
+                    <input type="password" name="password" id="password">
+                </div>
+            </div>
+            <div class=" row justify-content-center m-2 ps-5">
+                <div class="col-4">
+                    <button type="submit" class="text-center" id="login-button">Login</button>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+    </div>  
+</div>
+
+    <script>
+        const form = document.querySelector('form');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const userName = form.userName.value;
+            const password = form.password.value;
+
+            try {
+                const res = await fetch('/login', {
+                    method: 'POST',
+                    body: JSON.stringify({ userName, password }),
+                    headers: { 'Content-Type': 'application/json'}
+                })
+                const data = await res.json();
+                if (data.user) {
+                    location.assign('/adminhome')
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        })
+    </script>
+    <%- include('partials/navFooter') %>
+    <%- include('partials/publicFooter') %>

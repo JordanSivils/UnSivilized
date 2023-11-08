@@ -1,0 +1,79 @@
+<%- include('partials/publicHeader') %>
+<%- include('partials/publicNav') %>
+<link rel="stylesheet" href="/styles/user.css">
+<%- include('partials/head-body') %>
+<% data.forEach(entry => { %>
+    <% let imgs   = [] %>
+    <% imgs = entry.images.split(', ') %>
+    <% for(let i = 0; i < 1; i++){ %>
+
+    <section class="mt-5">
+        <div class="container">
+            
+            <div class="row justify-content-center mb-2">
+                <div class="col-10 justify-content-center">
+                    <h1 class="text-center"><%= entry.title %></h1>
+                </div>
+            </div>
+            
+            <div class="row justify-content-center text-align-center m-1">
+                <div class="col-2">
+                   <p class="text-center">Blog #: <%= entry.blogNumber %> </p>
+                </div>
+            </div>
+            <div class="row justify-content-center text-align-center m-1">
+                <div class="col-2">
+                    <p class="text-center font-size-10" id="date"><%= moment(entry.date).format(' MM-DD-YYYY ') %></p>
+                </div>
+            </div>
+            <div class="row text-center mt-2 mb-1">
+                <div class="col-11">
+                    <img class="img img-fluid" src="<%= imgs[i] %>" alt="" height="800px">
+                </div>
+            </div>
+            <div class="row justify-content-center mb-2">
+                <div class="col-6 justify-content-center">
+                    <h1 class="text-center"><%= entry.location %></h1>
+                </div>
+            </div>
+            
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-8 col-sm-11 col-xsm-11">
+                    <p class="text-md-start text-sm-center font-size-16" id="individual-blog-writeup"><%= entry.writeUp %></p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <p class="text-center">Article written by <span><a href="/about" class="individual-blog-links">Kaily Sivils</a></span></p>
+                <p class="text-center">For more images and look ahead articles, follow us on <span><a href="https://www.instagram.com/unsivilizedtravels/" target="_blank" class="individual-blog-links">Instagram</a></span></p>
+            </div>
+        </div>
+    </section>
+        <% for(let j = 1; j < imgs.length; j++ ){ %>
+
+    <div class="d-inline g-4 justify-content-center">
+
+        <div class="pb-4" id="individual-all-images">
+          <img class="img img-fluid individual-images-bottom" onclick="toggleImage(this)"  src="<%= imgs[j] %>" alt="" width="400px" height="400px">
+        </div>
+        
+    </div>
+
+      
+    
+   
+    <% } %>
+    <% } %>   
+    <% }) %>
+        
+    <%- include('partials/navFooter') %>   
+    <script>
+        const toggleImage = (element) => {
+           element.classList.toggle('image-zoom') 
+        }
+    </script>
+    <%- include('partials/publicFooter') %>
+
+
+

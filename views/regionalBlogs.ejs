@@ -1,0 +1,72 @@
+<%- include('partials/publicHeader') %>
+<%- include('partials/publicNav') %>
+<link rel="stylesheet" href="/styles/user.css">
+<%- include('partials/head-body') %>
+<% if(data.length > 0){ %>
+    <% data.forEach(entry => { %>
+        
+
+    
+    
+    
+        <h1 class="text-bold m-5 px-5" id="recent"><%= entry.region %> Blogs</h1>
+    
+                <% let imgs   = [] %>
+                <% imgs = entry.images.split(', ') %>
+                <% for(let i = 0; i < 1; i++){ %>
+        <section class="m-5 mb-5">
+            <div class="container mt-5 mb-5 g-1">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 col-sm-11 col-md-11 text-md-center text-lg-end">
+                       <img class="img img-fluid" id="imaging" src="<%= imgs[i] %>" alt="" height="400px" width="500px">
+                    </div>    
+                        <div class="col-lg-6 col-sm-11 col-md-7 text-md-start text-lg-start ml-0 p-0" id="entry">
+                            <ul class="list-group-flush p-lg-0">
+                                <li class="list-group-item"><p class="mb-0 mt-2 p-0" id="region">Blog # <%= entry.blogNumber %> , <a class="blogs-a-region" href="/<%= entry.region %>"><%= entry.region %></a> , on <%= moment(entry.date).format(' MM-DD-YYYY ') %></p></li>
+                                <li class="list-group-item m-0"><p class="font-italic m-0 p-0"><%= entry.location %></p></li>
+                                <li class="list-group-item m-0 p-0"><h3 class="font-weight-bold m-0 p-0" id="entry-location"><%= entry.title %></li>
+                                <li class="list-group-item m-0 p-0"><h3 class="font-weight-bold m-0 p-0" id="entry-environment"><%= entry.environment %></li>
+                                
+                                
+                                <li class="list-group-item m-0"><p class=" mt-2 ml-2" id="blog-preview-condense" style="max-width: 400;"><%= entry.writeUp %></p></li>
+                                <li class="list-group-item m-0"><a class="continue-reading-a" href="/blogs/<%=entry.slug%>">Continue Reading...</a></li>
+                            </ul>       
+                        </div>
+                </div>
+            </div>
+        
+            
+        </section>
+    
+    
+   
+     <%}%> 
+     
+    <% }) %>
+    <% } else {  %>
+        <div class="container">
+            <div class="row justify-content-center mb-3 mt-2">
+                <div class="col-10">
+                    <H1 class="text-center">We have not ventured into this region yet...</H1>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-7">
+                    <h3 class="text-center">But we look forward to visiting soon!</h3>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-7 text-center">
+                    <iframe src="https://giphy.com/embed/j6aoUHK5YiJEc" width="480" height="466" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/mrw-friday-rei-j6aoUHK5YiJEc">via GIPHY</a></p>
+                </div>
+            </div>
+        </div>
+       
+        
+        <% } %> 
+    
+      
+    
+     
+    <%- include('partials/navFooter') %>
+    <%- include('partials/publicFooter') %>

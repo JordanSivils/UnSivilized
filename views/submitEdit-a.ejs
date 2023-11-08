@@ -1,0 +1,70 @@
+<%- include('partials/adminHeader') %>
+<%- include('partials/adminNav') %>
+
+<link rel="stylesheet" href="/styles/admin.css">
+<%- include('partials/head-body') %>
+
+    <% data.forEach(entry => { %>
+
+   
+    <h1>Edit</h1>
+    
+
+    <form class="m-3" action="/<%=entry._id%>?_method=PUT" method="post" id="form">
+        
+        <div class="form-group row pb-2">
+            <label for="blogNumber" class="col-sm-1 col-form-label text-bold">Blog #</label> 
+            <div class="col-2">
+                <input class="form-control lbl" value="<%= entry.blogNumber %>" type="number" id="blogNumber" name="blogNumber" placeholder="Blog #" required>
+            </div>
+            <label for="title" class="col-sm-1 col-form-label">Title</label>
+            <div class="col-8">
+                <input class="form-control lbl" type="text" name="title" value="<%= entry.title %>" placeholder="Blog Title">
+            </div>
+        </div>  
+
+        <div class="form-group row pb-2 my-2">
+            <label for="region" class="col-sm-1 col-form-label">Region</label>
+                <div class="col-4">
+                    <select class="form-select lbl" value="<%= entry.region %>" name="region" id="region" aria-label="Default select example">
+                        <option selected>Select the region</option>
+                        <option value="Northeast">Northeast</option>
+                        <option value="Western">Western</option>
+                        <option value="Southwest">Southwest</option>
+                        <option value="Midwest">Midwest</option>
+                        <option value="Southeast">Southeast</option>
+                        <option value="International">International</option>
+                    </select>
+                </div>
+                <label for="location" class="col-sm-1 col-form-label">Location</label> 
+                <div class="col-4">
+                    <input class="form-control lbl" type="text" value="<%= entry.location %>" name="location" id="location" placeholder="Location">
+                </div>
+        </div>
+        
+        <div class="form-group row pb-2 my-2">
+            <label for="environment" class="col-sm-1 col-form-label">Environment</label>
+            <div class="col-3">
+                <input class="form-control lbl" type="text" value="<%= entry.environment %>" name="environment" id="environment" placeholder="Environment">
+            </div>
+            <label for="date" class="col-sm-1 col-form-label">Date</label>
+                <div class="col-2">
+                    <input class="form-control lbl" id="date" type="date" name="date" placeholder="insert date">
+                </div>
+            <label for="instagramLink" class="col-sm-1 col-form-label">I.G. Link</label>
+                <div class="col-3">
+                    <input class="form-control lbl" id="instagramLink" value="<%= entry.instagramLink %>" type="text" name="instagramLink" placeholder="Instagram Link">
+                </div>
+        </div>
+
+       <div class="from-group text-center mt-5 mb-5">
+            <label for="writeUp" class="mb-2">Blog Body</label>
+            <input class="form-control lbl" type="text" name="writeUp" value="<%= entry.writeUp %>" placeholder="Main Blog" rows="11">
+        </div>   
+
+        <button type="submit" class="form-a-button">Update Post</button>
+    </form>
+
+<% }) %>
+
+<%- include('partials/adminFooter') %>

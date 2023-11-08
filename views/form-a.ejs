@@ -1,0 +1,74 @@
+<%- include('partials/adminHeader') %>
+<%- include('partials/adminNav') %>
+<link rel="stylesheet" href="/styles/admin.css">
+<%- include('partials/head-body') %>
+
+
+    <form  class="m-3" action="/form" method="post" id="form" enctype="multipart/form-data">
+        <div class="form-group row pb-2">
+            <label for="blogNumber" class="col-sm-1 col-form-label text-bold">Blog #</label> 
+            <div class="col-2">
+                <input class="form-control lbl" type="number" id="blogNumber" name="blogNumber" placeholder="Blog #" required>
+            </div>
+            <label for="title" class="col-sm-1 col-form-label">Title</label>
+            <div class="col-8">
+                <input class="form-control lbl" type="text" name="title" placeholder="Blog Title">
+            </div>
+        </div>  
+
+        <div class="form-group row pb-2 my-2">
+            <label for="region" class="col-sm-1 col-form-label">Region</label>
+                <div class="col-4">
+                    <select class="form-select lbl" name="region" id="region" aria-label="Default select example">
+                        <option selected>Select the region</option>
+                        <option value="Northeast">Northeast</option>
+                        <option value="Western">Western</option>
+                        <option value="Southwest">Southwest</option>
+                        <option value="Midwest">Midwest</option>
+                        <option value="Southeast">Southeast</option>
+                        <option value="International">International</option>
+                    </select>
+                </div>
+                <label for="location" class="col-sm-1 col-form-label">Location</label> 
+                <div class="col-4">
+                    <input class="form-control lbl" type="text" name="location" id="location" placeholder="Location">
+                </div>
+        </div>
+        
+        <div class="form-group row pb-2 my-2">
+            <label for="environment" class="col-sm-1 col-form-label">Environment</label>
+            <div class="col-3">
+                <input class="form-control lbl" type="text" name="environment" id="environment" placeholder="Environment">
+            </div>
+            <label for="date" class="col-sm-1 col-form-label">Date</label>
+                <div class="col-2">
+                    <input class="form-control lbl" id="date" type="date" name="date" placeholder="insert date">
+                </div>
+            <label for="instagramLink" class="col-sm-1 col-form-label">I.G. Link</label>
+                <div class="col-3">
+                    <input class="form-control lbl" id="instagramLink" type="text" name="instagramLink" placeholder="Instagram Link">
+                </div>
+        </div>
+
+       <div class="from-group text-center mt-5 mb-5">
+            <label for="writeUp" class="mb-2">Blog Body</label>
+            <textarea class="form-control lbl" type="text" name="writeUp" placeholder="Main Blog" rows="11"></textarea>
+        </div>    
+
+        <div class="from-group row pb-2 my-2">
+            <label for="images" class="col-sm-1 col-form-label">Images</label>
+            <div class="col-3">
+                <input class="form-control-file lbl form-a-button" type="file" id="images" name="images" multiple>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-1">
+            <input type="submit"  class="submitting-form text-center form-a-button">
+        </div>
+        </div>
+    </form>
+
+    <hr>
+
+    
+    <%- include('partials/adminFooter') %>

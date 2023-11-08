@@ -1,0 +1,184 @@
+/* GENERAL USER FACING CSS */
+body{
+    font-family: Open Sans;
+}
+
+/* CSS FOR BLOG PREVIEW DIVS */
+#imaging{
+    width: 400px;
+    height: 300px;
+}
+#entry{
+    font-size: 25px;
+}
+#region{
+    color: rgba(34, 34, 34, 0.825);
+    font-size: small;
+}
+#entry-location{
+    font-family: Open Sans;
+    font-size: 37px;
+    font-weight: 600;
+}
+#blog-preview-condense{
+    overflow: hidden;
+    max-width:50%;
+     /* wrap extended text*/
+    
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    font-size: 14px;
+}
+#entry-environment{
+    font-size: 16px;
+}
+.blogs-a-region{
+    color: black;
+    text-decoration: underline;
+}
+.blogs-a-region:hover{
+    font-weight: bold;
+}
+.continue-reading-a{
+    color: #036124;
+    text-decoration: underline;
+}
+.continue-reading-a:hover{
+    font-weight: bold;
+    color: #036124;
+}
+
+
+/* HOME CSS */
+#home-container{
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+}
+#home-recent-blogs{
+    color: #000000a8;
+    font-family: Balthazar;
+    font-size: 29px;
+}
+
+/* ABOUT CSS */
+
+
+/* ALL BLOGS CSS */
+
+
+/* CONTACT CSS */
+
+
+/* INDIVIDUAL BLOG CSS */
+#date{
+    font-style: italic;
+    font-size: 9px;
+}
+#individual-all-images{
+    display: inline;
+    margin-left: 40px;
+}
+.individual-images-bottom{
+    display: inline;
+     margin-bottom: 20px;
+     transition: .5s;
+}
+.image-zoom{
+    height: 700px;
+    width: 700px;
+}
+.individual-blog-links{
+    color: rgb(24, 107, 60);
+    text-decoration: underline;
+}
+.individual-blog-links:hover{
+    color: rgb(24, 107, 60);
+    font-weight: bold;
+    text-decoration: underline;
+}
+#individual-blog-writeup{
+    white-space: pre-wrap;
+}
+/* LOGIN CSS */
+#login-form{
+    border: solid 1px black;
+    background-color: rgba(15, 15, 15, 0.893);
+    color: white;
+}
+#login-button{
+    width: 100px;
+    height: 30px;
+    border: none;
+    color: rgb(16, 16, 16);
+    background-color: white;
+    border-radius: 15px;
+}
+#login-button:hover{
+    background-color: #c4c4c4;
+}
+
+/* REGIONAL BLOG */
+
+
+/* USER FACING NAV */
+nav{
+    background-color: #3A130C;
+}
+#nav-text-color{
+    color: white;
+}
+#nav-title{
+    font-size: 35px;
+}
+.nav-dropdown-links{
+    color: white;
+}
+#navbar-dropdown{
+    color: white;
+}
+#dropdown-in-dropdown{
+    background-color: #3A130C;
+    color: white;
+}
+#dropdownMenuButton1{
+    background-color: #3A130C;
+    color: white;
+    border: none;
+}
+.nav-item{
+    color: white;
+}
+
+
+/* USER FACING FOOTER */
+#very-bottom-div{
+    width: 100%;
+}
+
+#footer{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: #3A130C;
+    color: #ffffff;
+}
+.public-footer-text{
+    font-size: 12px;
+    color: white;
+    text-decoration: none; 
+}
+.public-footer-text:hover{
+    text-decoration: underline;
+    color: #c4c4c4;
+}
+
+.public-footer-ul{
+    list-style-type: none;
+}
+#secret-login-button{
+    font-size: 10px;
+    color: #230b07;
+}
