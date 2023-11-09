@@ -64,7 +64,12 @@ body{
 }
 
 /* ABOUT CSS */
-
+#kaily-about{
+    height: 250px;
+    width: 430px;
+    border-radius: 75%;
+    border: none;
+}
 
 /* ALL BLOGS CSS */
 
